@@ -858,4 +858,11 @@ function handleSubmit() {
     (notes ? '\nMessage:\n' + notes + '\n' : '') +
     (source ? '\nHeard via: ' + source : '')
   );
-  window.location.href = 'mailto:slebron5809@comcast.net?subject=' + subject + '&body='
+  window.location.href = 'mailto:slebron5809@comcast.net?subject=' + subject + '&body=' + body;
+  document.getElementById('inquiry-form').style.display = 'none';
+  document.getElementById('success-box').style.display = 'block';
+  document.getElementById('success-box').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
