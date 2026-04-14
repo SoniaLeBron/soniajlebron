@@ -6,7 +6,7 @@
     <title>Sonia J. LeBron, SPHR | Executive Chief of Staff</title>
     
     <meta name="description" content="Executive Chief of Staff for High-Profile Legacies, Professional Athletes, and HNWFs. Specialized in Global Estate Governance and Private Office Leadership. USA Based.">
-    <meta name="keywords" content="Chief of Staff NYC, Estate Manager Palm Beach, Private Office Beverly Hills, Hamptons Estate Manager, Athlete Chief of Staff, UHNW Family Office NJ, Aspen Estate Management, International Private Office, $300k Chief of Staff">
+    <meta name="keywords" content="Chief of Staff NYC, Estate Manager Palm Beach, Private Office Beverly Hills, Hamptons Estate Manager, Athlete Chief of Staff, UHNW Family Office NJ, Aspen Estate Management, International Private Office, Celebrity Chief of Staff, $300k Chief of Staff">
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
@@ -14,28 +14,48 @@
         :root { --navy: #0A1128; --gold: #C5A059; --cream: #FAF8F3; --white: #FFFFFF; }
         body { font-family: 'Inter', sans-serif; background-color: var(--cream); color: var(--navy); margin: 0; line-height: 1.6; }
         
+        /* The Discretion Banner */
         .discretion-bar { background: var(--navy); color: var(--gold); text-align: center; padding: 12px; font-size: 0.75rem; letter-spacing: 3px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid var(--gold); }
+        
+        /* Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 10%; background: var(--cream); }
         .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; letter-spacing: 1px; }
 
-        .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 100px 10%; background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        /* Hero Section */
+        .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 80px 10%; background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .hero-text { padding-right: 50px; }
         .hero-tag { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
-        .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 4rem; line-height: 1.1; margin: 0 0 2rem 0; font-weight: 400; }
-        
-        /* High-End Operations Bar */
-        .op-bar { background: #f8f8f8; border-y: 1px solid #ddd; padding: 15px 10%; display: flex; justify-content: space-around; font-size: 0.75rem; color: #777; letter-spacing: 1px; text-transform: uppercase; }
+        .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; line-height: 1.1; margin: 0 0 2rem 0; font-weight: 400; }
+        .hero h1 em { font-style: italic; font-weight: 300; }
+        .hero p { font-size: 1.1rem; color: #333; margin-bottom: 2rem; }
 
-        .ticker { background: var(--navy); color: var(--white); padding: 1.5rem 0; overflow: hidden; white-space: nowrap; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; }
+        .hero-img img { width: 100%; height: auto; border: 1px solid #eee; box-shadow: 20px 20px 0px var(--navy); filter: grayscale(10%); }
+
+        /* Strategic Presence Bar */
+        .op-bar { background: #f8f8f8; border-bottom: 1px solid #ddd; padding: 15px 10%; display: flex; justify-content: space-around; font-size: 0.75rem; color: #777; letter-spacing: 1px; text-transform: uppercase; flex-wrap: wrap; }
+
+        /* Scrolling Ticker for Sports/Celebrity Context */
+        .ticker { background: var(--navy); color: var(--white); padding: 1.5rem 0; overflow: hidden; white-space: nowrap; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; border-y: 1px solid var(--gold); }
         .ticker-content { display: inline-block; padding-left: 100%; animation: scroll 40s linear infinite; }
         @keyframes scroll { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
 
-        .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 80px 10%; }
-        .card { background: var(--white); border: 1px solid rgba(10, 17, 40, 0.1); padding: 3rem; transition: 0.4s ease; }
+        /* Service Cards */
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 80px 10%; }
+        .card { background: var(--white); border: 1px solid rgba(10, 17, 40, 0.1); padding: 3rem; transition: 0.4s ease; position: relative; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--navy); margin-bottom: 1.5rem; border-bottom: 1px solid var(--gold); padding-bottom: 10px; }
-        
-        .btn { display: inline-block; padding: 1.2rem 3.5rem; background: var(--navy); color: var(--white); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-top: 2rem; border: 1px solid var(--navy); font-weight: 600; }
+        .card p { font-size: 0.95rem; color: #444; }
+
+        /* Button Styling */
+        .btn { display: inline-block; padding: 1.2rem 3.5rem; background: var(--navy); color: var(--white); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-top: 1rem; border: 1px solid var(--navy); font-weight: 600; transition: 0.3s; }
         .btn:hover { background: transparent; color: var(--navy); }
+
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-text { padding-right: 0; margin-bottom: 40px; }
+            .hero h1 { font-size: 2.8rem; }
+            .op-bar span { margin: 5px 10px; }
+        }
     </style>
 </head>
 <body>
@@ -57,25 +77,27 @@
             <a href="mailto:inquiries@sonialebron.com" class="btn">Confidential Engagement</a>
         </div>
         <div class="hero-img">
-            <div style="width: 100%; height: 450px; background: #f0f0f0; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; font-style: italic; color: #888;">[Your Executive Portrait]</div>
+            <img src="sonia-lebron.jpg" alt="Sonia J. LeBron, Executive Chief of Staff">
         </div>
     </section>
 
     <div class="op-bar">
-        <span>Strategic Presence: New York City</span>
+        <span>New York City</span>
         <span>•</span>
         <span>Palm Beach</span>
         <span>•</span>
         <span>Beverly Hills</span>
         <span>•</span>
-        <span>Hamptons</span>
+        <span>The Hamptons</span>
+        <span>•</span>
+        <span>Aspen</span>
         <span>•</span>
         <span>London / Global</span>
     </div>
 
     <div class="ticker">
         <div class="ticker-content">
-            Security Liaison & Coordination • Private Office Human Capital • Bilingual Diplomacy • NDA Framework Management • High-Intensity Estate Governance • Multi-Property Portfolio Oversight • Principal Advocacy
+            Security Liaison & Coordination • Private Office Human Capital • Bilingual Diplomacy • NDA Framework Management • High-Intensity Estate Governance • Multi-Property Portfolio Oversight • Principal Advocacy • Global Deployment
         </div>
     </div>
 
@@ -86,7 +108,7 @@
         </div>
         <div class="card">
             <h3>Security & Team Liaison</h3>
-            <p>Managing the intersection of physical security, private household staff, and external advisors. I ensure all personnel operate within strict NDA boundaries and high-performance protocols.</p>
+            <p>Managing the intersection of physical security detail, private household staff, and external advisors. I ensure all personnel operate within strict NDA boundaries and high-performance protocols.</p>
         </div>
         <div class="card">
             <h3>Global Estate Governance</h3>
