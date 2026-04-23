@@ -43,7 +43,7 @@
     {"@type":"Offer","name":"Executive Advisory & Consulting","description":"Strategic counsel for family principals, celebrities, athletes, and trustees."},
     {"@type":"Offer","name":"Newborn Care Specialist Services","description":"Clinical-grade newborn care integrated with estate operations for high-profile families."}
   ],
-  "areaServed": ["New York City","New Jersey","California","Miami","United States","International"]
+  "areaServed": ["New York City","New Jersey","United States","International"]
 }
 </script>
 
@@ -146,18 +146,16 @@ nav.scrolled {
 }
 .nav-cta:hover { color: var(--gold); }
 
-/* HERO */
+/* HERO — full width, no photo */
 .hero {
-  min-height: 100svh; display: grid; grid-template-columns: 55% 45%;
+  min-height: 100svh; display: flex; flex-direction: column; justify-content: center;
   position: relative; overflow: hidden; z-index: 2;
+  background: var(--paper);
 }
 .hero-left {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 8rem 4rem 5rem 5rem; position: relative; z-index: 5; background: var(--paper);
-}
-.hero-left::after {
-  content: ''; position: absolute; top: 15%; right: 0; bottom: 15%; width: .5px;
-  background: linear-gradient(to bottom, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 10rem 10rem 6rem 10rem; position: relative; z-index: 5;
+  max-width: 1000px;
 }
 .hero-eyebrow {
   display: flex; align-items: center; gap: 1.2rem;
@@ -168,14 +166,14 @@ nav.scrolled {
 .hero-eyebrow span { display: block; width: 50px; height: .5px; background: var(--gold); }
 h1 {
   font-family: 'Bodoni Moda', serif;
-  font-size: clamp(3.5rem,6.5vw,6.2rem); font-weight: 300; line-height: .98;
+  font-size: clamp(4rem,7.5vw,7.2rem); font-weight: 300; line-height: 1.0;
   color: var(--ink); letter-spacing: -.01em;
   opacity: 0; animation: fadeUp 1s .5s forwards;
 }
-h1 em { font-style: italic; color: var(--gold); display: block; }
+h1 em { font-style: italic; color: var(--gold); display: inline; }
 .hero-rule { width: 0; height: .5px; background: var(--line); margin: 2rem 0; animation: growLine .8s 1.2s forwards; }
 .hero-sub {
-  font-size: .85rem; color: var(--muted); max-width: 420px; line-height: 1.85;
+  font-size: .95rem; color: var(--muted); max-width: 540px; line-height: 1.85;
   opacity: 0; animation: fadeUp .9s 1s forwards;
 }
 .hero-actions {
@@ -200,23 +198,25 @@ h1 em { font-style: italic; color: var(--gold); display: block; }
   border-bottom: .5px solid currentColor; padding-bottom: 2px; transition: color .2s;
 }
 .btn-line:hover { color: var(--gold); }
-.hero-right { position: relative; overflow: hidden; background: var(--warm); }
-.hero-right img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
-  transform: scale(1.04); animation: zoomIn 1.8s .2s cubic-bezier(.19,1,.22,1) forwards;
+
+/* Hero stats — full width bar at bottom */
+.hero-stats-bar {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 6;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  background: var(--ink);
+  border-top: .5px solid rgba(168,132,74,.3);
+  opacity: 0; animation: fadeUp .9s 1.5s forwards;
 }
-.hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(160deg, transparent 50%, rgba(10,10,9,.7) 100%); z-index: 2;
-}
-.hero-stats {
-  position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
-  display: grid; grid-template-columns: repeat(3,1fr); border-top: .5px solid rgba(168,132,74,.3);
-}
-.hstat { padding: 1.5rem 1.2rem; border-right: .5px solid rgba(168,132,74,.2); }
+.hstat { padding: 1.8rem 3rem; border-right: .5px solid rgba(168,132,74,.2); }
 .hstat:last-child { border-right: none; }
-.hstat-n { font-family: 'Bodoni Moda', serif; font-size: 2rem; font-weight: 300; color: var(--gold2); line-height: 1; }
-.hstat-l { font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(246,243,238,.55); margin-top: .3rem; }
+.hstat-n {
+  font-family: 'Bodoni Moda', serif; font-size: 2.2rem; font-weight: 300;
+  color: var(--gold2); line-height: 1;
+}
+.hstat-l {
+  font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(246,243,238,.75); margin-top: .4rem;
+}
 
 /* TICKER */
 .ticker { background: var(--ink); overflow: hidden; padding: .75rem 0; position: relative; z-index: 2; }
@@ -286,8 +286,13 @@ h2 em { font-style: italic; color: var(--gold); }
   transform: scaleX(0); transform-origin: left; transition: transform .5s;
 }
 .num-card:hover::after { transform: scaleX(1); }
-.num-big { font-family: 'Bodoni Moda', serif; font-size: 3.2rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: .6rem; }
-.num-card p { font-size: .82rem; color: rgba(246,243,238,.5); line-height: 1.65; }
+/* Darker, high-contrast number display */
+.num-big {
+  font-family: 'Bodoni Moda', serif; font-size: 3.2rem; font-weight: 400;
+  color: #D4AF6A; line-height: 1; margin-bottom: .6rem;
+  text-shadow: 0 0 30px rgba(212,175,106,0.3);
+}
+.num-card p { font-size: .82rem; color: rgba(246,243,238,.72); line-height: 1.65; }
 
 /* BENTO GRID — 2026 standard */
 .bento-section { padding: 7rem 0; background: var(--pale); position: relative; z-index: 2; }
@@ -426,9 +431,7 @@ footer a:hover { color: var(--gold); }
 @media (max-width:1024px){
   nav { padding:1.2rem 2rem; } nav.scrolled { padding:1rem 2rem; }
   .nav-links { display:none; }
-  .hero { grid-template-columns:1fr; }
-  .hero-left { padding:9rem 2.5rem 4rem; }
-  .hero-right { min-height:420px; }
+  .hero-left { padding:9rem 3rem 7rem; }
   .container { padding:0 2.5rem; }
   .markets { padding:1.5rem 2.5rem; }
   .svc-grid { grid-template-columns:1fr; }
@@ -438,6 +441,7 @@ footer a:hover { color: var(--gold); }
   .b-full { grid-column:span 2; }
   .exp-grid,.why-inner { grid-template-columns:1fr; gap:3.5rem; }
   footer { flex-direction:column; gap:.8rem; text-align:center; padding:2rem; }
+  .hero-stats-bar { grid-template-columns: repeat(3,1fr); }
 }
 @media (max-width:600px){
   .bento-grid { grid-template-columns:1fr; }
@@ -446,6 +450,9 @@ footer a:hover { color: var(--gold); }
   .fg.full { grid-column:1; }
   .num-grid { grid-template-columns:1fr; }
   h1 { font-size:3rem; }
+  .hero-left { padding:8rem 2rem 6rem; }
+  .hero-stats-bar { grid-template-columns: 1fr; }
+  .hstat { border-right: none; border-bottom: .5px solid rgba(168,132,74,.2); }
 }
 </style>
 </head>
@@ -468,11 +475,11 @@ footer a:hover { color: var(--gold); }
   <a href="#inquiry" class="nav-cta">Private Inquiry</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO — full width, no photo -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow"><span></span>Private Family Office &amp; Household Leadership</div>
-    <h1>Trusted by<br><em>Extraordinary</em><br>Families.</h1>
+    <h1>Trusted by <em>Extraordinary</em> Families.</h1>
     <div class="hero-rule"></div>
     <p class="hero-sub">Chief of Staff · Human Capital Strategist · Executive Advisor.<br>For over two decades, a trusted partner behind high-performing households and family offices worldwide.</p>
     <div class="hero-actions">
@@ -480,14 +487,11 @@ footer a:hover { color: var(--gold); }
       <a href="#services" class="btn-line">Explore Services</a>
     </div>
   </div>
-  <div class="hero-right">
-    <img src="profile.png" alt="Sonia J. LeBron, Private Family Office Chief of Staff" loading="eager" />
-    <div class="hero-overlay"></div>
-    <div class="hero-stats">
-      <div class="hstat"><div class="hstat-n">20+</div><div class="hstat-l">Years Executive Experience</div></div>
-      <div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l">Bilingual EN / ES</div></div>
-      <div class="hstat"><div class="hstat-n">NDA</div><div class="hstat-l">Full Discretion, Always</div></div>
-    </div>
+  <!-- Stats bar anchored to bottom of hero -->
+  <div class="hero-stats-bar">
+    <div class="hstat"><div class="hstat-n">20+</div><div class="hstat-l">Years Executive Experience</div></div>
+    <div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l">Bilingual EN / ES</div></div>
+    <div class="hstat"><div class="hstat-n">NDA</div><div class="hstat-l">Full Discretion, Always</div></div>
   </div>
 </section>
 
@@ -499,11 +503,14 @@ footer a:hover { color: var(--gold); }
   </div>
 </div>
 
-<!-- MARKETS -->
+<!-- MARKETS — updated pills -->
 <div class="markets">
   <div class="markets-label">Primary Markets</div>
   <div class="market-pills">
-    <span class="mpill active">New York City</span><span class="mpill active">New Jersey</span><span class="mpill active">California</span><span class="mpill">Miami</span><span class="mpill">Nationwide USA</span><span class="mpill">International</span>
+    <span class="mpill active">Greater New York City Area</span>
+    <span class="mpill active">New Jersey</span>
+    <span class="mpill active">USA</span>
+    <span class="mpill active">International</span>
   </div>
 </div>
 
