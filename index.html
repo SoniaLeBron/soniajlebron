@@ -34,7 +34,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink:   #0a0a09;
+  --ink:   #2A2724;
   --paper: #F6F3EE;
   --warm:  #EDE9E1;
   --gold:  #A8844A;
@@ -42,7 +42,7 @@
   --pale:  #F0EAD8;
   --muted: #7A7066;
   --line:  rgba(168,132,74,0.2);
-  --navy:  #0D1B2A;
+  --navy:  #3A3632;
 }
 
 html { scroll-behavior: smooth; }
@@ -68,10 +68,10 @@ body::after {
 .mesh-bg {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(13,27,42,0.82) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 70% at 80% 90%, rgba(26,28,30,0.88) 0%, transparent 65%),
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(58,54,50,0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 70% at 80% 90%, rgba(58,54,50,0.55) 0%, transparent 65%),
     radial-gradient(ellipse 90% 50% at 60% 50%, rgba(168,132,74,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 80% at 10% 80%, rgba(13,27,42,0.55) 0%, transparent 70%);
+    radial-gradient(ellipse 70% 80% at 10% 80%, rgba(58,54,50,0.35) 0%, transparent 70%);
   animation: meshShift 15s ease-in-out infinite alternate;
   opacity: 0; transition: opacity 1.4s;
 }
@@ -118,12 +118,12 @@ h1 em { font-style: italic; color: var(--gold); display: block; }
 .btn-ink:hover { background: var(--gold); }
 .hero-right { position: relative; overflow: hidden; background: var(--warm); }
 .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transform: scale(1.04); animation: zoomIn 1.8s .2s cubic-bezier(.19,1,.22,1) forwards; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, transparent 50%, rgba(10,10,9,.7) 100%); z-index: 2; }
-.hero-stats { position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; display: grid; grid-template-columns: repeat(3,1fr); border-top: .5px solid rgba(168,132,74,.5); background: rgba(10,10,9,0.82); }
-.hstat { padding: 1.5rem 1.2rem; border-right: .5px solid rgba(168,132,74,.3); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, transparent 50%, rgba(58,54,50,.6) 100%); z-index: 2; }
+.hero-stats { position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; display: grid; grid-template-columns: repeat(3,1fr); border-top: .5px solid rgba(168,132,74,.75); background: rgba(58,54,50,0.82); }
+.hstat { padding: 1.5rem 1.2rem; border-right: .5px solid rgba(168,132,74,.5); }
 .hstat:last-child { border-right: none; }
 .hstat-n { font-family: 'Bodoni Moda', serif; font-size: 2rem; font-weight: 400; color: #ffffff; line-height: 1; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
-.hstat-l { font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(246,243,238,.8); margin-top: .3rem; }
+.hstat-l { font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(246,243,238,.95); margin-top: .3rem; }
 
 /* TICKER */
 .ticker { background: var(--ink); overflow: hidden; padding: .75rem 0; position: relative; z-index: 2; }
@@ -169,7 +169,7 @@ h2 em { font-style: italic; color: var(--gold); }
 .num-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(168,132,74,.15); }
 .num-card { background: rgba(13,27,42,0.72); padding: 2.8rem 2rem; }
 .num-big { font-family: 'Bodoni Moda', serif; font-size: 3.2rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: .6rem; }
-.num-card p { font-size: .82rem; color: rgba(246,243,238,.5); line-height: 1.65; }
+.num-card p { font-size: .82rem; color: rgba(246,243,238,.78); line-height: 1.65; }
 
 /* CREDENTIALS BENTO */
 .bento-section { padding: 7rem 0; background: var(--pale); position: relative; z-index: 2; }
@@ -178,7 +178,7 @@ h2 em { font-style: italic; color: var(--gold); }
 .bcard { border-radius: 20px; padding: 2.2rem 2rem; position: relative; overflow: hidden; background: rgba(255,255,255,0.55); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(168,132,74,0.14); transition: transform .45s cubic-bezier(.19,1,.22,1); }
 .bcard:hover { transform: translateY(-5px); }
 .bcard::before { content: ''; position: absolute; top: 0; left: 20px; right: 20px; height: 1.5px; background: linear-gradient(to right, var(--gold), transparent); border-radius: 2px; }
-.bcard-dark { background: rgba(13,27,42,0.82); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border-color: rgba(168,132,74,.18); }
+.bcard-dark { background: rgba(58,54,50,0.55); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border-color: rgba(168,132,74,.18); }
 .b-wide { grid-column: span 8; } .b-narrow { grid-column: span 4; } .b-half { grid-column: span 6; } .b-third { grid-column: span 4; }
 .bcard-tag { font-size: .58rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
 .bcard-dark .bcard-tag { color: var(--gold2); }
@@ -186,7 +186,7 @@ h2 em { font-style: italic; color: var(--gold); }
 .bcard h3 em { font-style: italic; color: var(--gold); }
 .bcard p { font-size: .84rem; color: var(--muted); line-height: 1.78; }
 .bcard-dark h3 { color: var(--paper); }
-.bcard-dark p { color: rgba(246,243,238,.55); }
+.bcard-dark p { color: rgba(246,243,238,.82); }
 .big-num { font-family: 'Bodoni Moda', serif; font-size: 3.6rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: .3rem; }
 .bcard-dark .big-num { color: var(--gold2); }
 .big-label { font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
@@ -208,7 +208,7 @@ h2 em { font-style: italic; color: var(--gold); }
 .tcard::before { content: '\201C'; font-family: 'Bodoni Moda', serif; font-size: 5rem; color: var(--gold); opacity: .15; position: absolute; top: .8rem; left: 1.5rem; line-height: 1; }
 .tcard-text { font-size: .9rem; color: rgba(246,243,238,.75); line-height: 1.9; margin-bottom: 1.5rem; font-style: italic; position: relative; z-index: 2; }
 .tcard-attr { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold2); }
-.tcard-name { font-family: 'Bodoni Moda', serif; font-size: 1rem; color: rgba(246,243,238,.5); margin-top: .2rem; }
+.tcard-name { font-family: 'Bodoni Moda', serif; font-size: 1rem; color: rgba(246,243,238,.78); margin-top: .2rem; }
 
 /* INQUIRY */
 .inquiry { padding: 7rem 0; background: var(--paper); position: relative; z-index: 2; }
@@ -297,7 +297,8 @@ footer a:hover { color: var(--gold); }
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#testimonials">Testimonials</a>
-    <a href="#inquiry">Inquiry</a><a href="#inquiry">Inquiry</a>
+    <a href="store.html">The Collection</a>
+    <a href="#inquiry">Inquiry</a>
   </div>
   <a id="nav-cta-link" href="#" class="nav-cta">Private Inquiry</a>
 </nav>
@@ -394,7 +395,7 @@ footer a:hover { color: var(--gold); }
       <div class="bcard b-narrow bcard-dark" style="display:flex;flex-direction:column;justify-content:center;">
         <div class="bcard-tag">Specialized Care</div>
         <h3 style="color:var(--paper);">Newborn Care <em style="color:var(--gold2);">Specialist</em></h3>
-        <p style="color:rgba(246,243,238,.55);font-size:.84rem;">Certified postpartum support, sleep scheduling, and developmental care for high-profile growing families.</p>
+        <p style="color:rgba(246,243,238,.82);font-size:.84rem;">Certified postpartum support, sleep scheduling, and developmental care for high-profile growing families.</p>
       </div>
       <div class="bcard b-half">
         <div class="bcard-tag">Availability</div>
@@ -435,6 +436,58 @@ footer a:hover { color: var(--gold); }
     </div>
   </div>
 </section>
+
+<!-- STORE TEASER -->
+<section id="store" style="padding:7rem 0;background:var(--warm);position:relative;z-index:2;">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 5rem;">
+      <div class="stag" style="justify-content:center;">The Collection</div>
+      <h2>Resources Built for <em>Exceptional</em> Households</h2>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.88;margin-top:.8rem;">Lawyer-reviewed systems, on-site audits, and retained consulting — built from lived experience inside private homes, not adapted from corporate templates.</p>
+    </div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:.5px solid var(--line);border-left:.5px solid var(--line);">
+      <a href="store.html#handbook" class="stc">
+        <div class="stc-num">01</div>
+        <div class="stc-tag">Digital Download · Immediate</div>
+        <h3>Private Household<br><em>Employee Handbook</em></h3>
+        <p>The lawyer-reviewed, NJ &amp; NY compliant foundation every private household needs. 15 sections. Customise in 30 minutes.</p>
+        <div class="stc-foot"><span class="stc-price">$495</span><span class="stc-link">View Details →</span></div>
+      </a>
+      <a href="store.html#audit" class="stc">
+        <div class="stc-num">02</div>
+        <div class="stc-tag">On-Site Engagement · By Application</div>
+        <h3>Private Household<br><em>Audit</em></h3>
+        <p>I come to your property, find every gap in staff, systems, legal documentation, and security — then deliver a full written report personally.</p>
+        <div class="stc-foot"><span class="stc-price">From $5,000</span><span class="stc-link">View Details →</span></div>
+      </a>
+      <a href="store.html#consulting" class="stc">
+        <div class="stc-num">03</div>
+        <div class="stc-tag">Retained Engagement · By Application Only</div>
+        <h3>Private Consultant<br><em>Engagement</em></h3>
+        <p>Ongoing embedded strategic partnership — staff strategy, legal risk, operations, and direct access on a retained basis with complete discretion.</p>
+        <div class="stc-foot"><span class="stc-price">$25,000/mo</span><span class="stc-link">View Details →</span></div>
+      </a>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:3rem;">
+      <a href="store.html" class="btn-ink" style="font-size:.68rem;padding:1rem 3rem;">View the Full Collection →</a>
+    </div>
+  </div>
+</section>
+<style>
+.stc { display:flex;flex-direction:column;padding:3rem 2.5rem;border-right:.5px solid var(--line);border-bottom:.5px solid var(--line);background:rgba(255,255,255,0.6);text-decoration:none;color:inherit;position:relative;overflow:hidden;transition:background .35s,transform .4s cubic-bezier(.19,1,.22,1); }
+.stc::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.19,1,.22,1); }
+.stc:hover { background:rgba(240,234,216,.9);transform:translateY(-4px); }
+.stc:hover::before { transform:scaleX(1); }
+.stc-num { font-family:'Bodoni Moda',serif;font-size:4rem;font-weight:300;color:rgba(168,132,74,.12);line-height:1;margin-bottom:1rem; }
+.stc-tag { font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem; }
+.stc h3 { font-family:'Bodoni Moda',serif;font-size:1.35rem;font-weight:300;color:var(--ink);line-height:1.25;margin-bottom:.8rem; }
+.stc h3 em { font-style:italic;color:var(--gold); }
+.stc p { font-size:.85rem;color:var(--muted);line-height:1.82;flex:1; }
+.stc-foot { display:flex;align-items:center;justify-content:space-between;border-top:.5px solid var(--line);padding-top:1.2rem;margin-top:1.5rem; }
+.stc-price { font-family:'Bodoni Moda',serif;font-size:1.5rem;font-weight:300;color:var(--ink); }
+.stc-link { font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold); }
+@media(max-width:1024px){ #store [style*="repeat(3"] { grid-template-columns:1fr !important; } }
+</style>
 
 <!-- INQUIRY -->
 <section id="inquiry" class="inquiry">
