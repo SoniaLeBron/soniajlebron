@@ -162,8 +162,8 @@ h2 em { font-style: italic; color: var(--gold); }
 /* CREDENTIALS BENTO */
 .bento-section { padding: 7rem 0; background: var(--navy); position: relative; z-index: 2; }
 .bento-head { margin-bottom: 3.5rem; }
-.bento-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 12px; align-items: stretch; }
-.bcard { border-radius: 6px; padding: 2.2rem 2rem; position: relative; overflow: hidden; background: rgba(22,34,52,0.75); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(184,145,42,0.18); transition: transform .45s cubic-bezier(.19,1,.22,1); height: 100%; box-sizing: border-box; }
+.bento-grid { display: grid; grid-template-columns: repeat(12,1fr); grid-auto-rows: minmax(175px,auto); gap: 12px; }
+.bcard { border-radius: 6px; padding: 2.2rem 2rem; position: relative; overflow: hidden; background: rgba(22,34,52,0.75); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(184,145,42,0.18); transition: transform .45s cubic-bezier(.19,1,.22,1); }
 .bcard:hover { transform: translateY(-5px); }
 .bcard::before { content: ''; position: absolute; top: 0; left: 20px; right: 20px; height: 1.5px; background: linear-gradient(to right, var(--gold), transparent); border-radius: 2px; }
 .bcard-dark { background: rgba(184,145,42,0.08); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border-color: rgba(184,145,42,.3); }
@@ -429,27 +429,27 @@ footer a:hover { color: var(--gold); }
       <div class="stag">About Vorton Advisory</div>
       <h2>The Full Picture, <em>At a Glance</em></h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:12px;">
-      <!-- Row 1: Why Vorton Advisory (left 8) + Newborn Care (right 4) -->
-      <div class="bcard" style="grid-column:span 8;grid-row:1;">
+    <div class="bento-grid reveal">
+      <!-- Row 1: Why Vorton Advisory (left, wide) + Newborn Care (right, narrow) -->
+      <div class="bcard" style="grid-column:span 8;">
         <div class="bcard-tag">Why Vorton Advisory</div>
         <h3>Ground Floor to <em>Boardroom</em></h3>
         <p>My career didn't begin in an executive suite; it began inside private, high-net-worth homes as a household manager and certified newborn care specialist. Over the years, I paired that hands-on experience with an MBA and an SPHR certification.</p>
         <p style="margin-top:.9rem;font-size:.84rem;color:rgba(246,243,238,.65);line-height:1.78;">This rare trajectory gives me something traditional consultants simply don't have: the deep empathy of someone who has actually done the work, combined with the strategic rigor required to lead at the highest corporate levels. I bridge the gap between day-to-day domestic operations and executive-level human resources.</p>
       </div>
-      <div class="bcard" style="grid-column:span 4;grid-row:1;display:flex;flex-direction:column;justify-content:flex-start;">
+      <div class="bcard bcard-dark" style="grid-column:span 4;display:flex;flex-direction:column;justify-content:flex-start;">
         <div class="bcard-tag" style="margin-bottom:.4rem;">Specialized Care</div>
         <h3 style="font-size:1.1rem;margin-bottom:.35rem;">Newborn Care <em>Specialist</em></h3>
         <p style="color:var(--gold2);font-size:.57rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem;line-height:1.3;">English &amp; Spanish · Bilingual</p>
         <p style="color:rgba(246,243,238,.82);font-size:.82rem;line-height:1.62;">Certified postpartum support, sleep scheduling, and developmental care for high-profile growing families.</p>
       </div>
-      <!-- Row 2: Availability + Languages equal halves — explicitly same row -->
-      <div class="bcard" style="grid-column:span 6;grid-row:2;align-self:start;">
+      <!-- Row 2: Availability + Languages equal halves -->
+      <div class="bcard" style="grid-column:span 6;">
         <div class="bcard-tag">Availability</div>
         <h3><em>Passport</em> Ready</h3>
         <p>Domestic and international engagements. Multi-residence, short-term, and long-term. Available now.</p>
       </div>
-      <div class="bcard" style="grid-column:span 6;grid-row:2;align-self:start;">
+      <div class="bcard" style="grid-column:span 6;">
         <div class="bcard-tag">Languages</div>
         <h3>Bilingual <em>English &amp; Spanish</em></h3>
         <p>Fully fluent in both English and Spanish — every conversation, every document, every relationship handled with equal fluency and cultural intelligence.</p>
